@@ -3,3 +3,4 @@ pigpio==1.44
 Flask==1.1.1
 Flask-RESTful==0.3.7
 Flask-SocketIO==4.2.1
+Flask-Cors==3.0.10

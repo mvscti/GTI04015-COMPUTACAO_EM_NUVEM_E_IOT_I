@@ -1,0 +1,37 @@
+from flask import Flask, jsonify, make_response
+from flask_socketio import SocketIO
+import RPi.GPIO as GPIO
+app = Flask(__name__)
+app.config['DEBUG'] = True
+socketio = SocketIO(app)
+status = False
+LED_PIN = 17
+def setup():
+    global status
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setwarnings(False)
+    GPIO.setup(LED_PIN, GPIO.OUT)
+    
+    if (status==True):
+        GPIO.output(LED_PIN, GPIO.HIGH)
+
+@app.route('/altera/', methods=['PUT'])
+def altera_led():
+    global status, LED_PIN
+    if (status):
+        GPIO.output(LED_PIN, GPIO.LOW)
+    else:
+        GPIO.output(LED_PIN, GPIO.HIGH)
+    status=not(status)
+    status_led_pin={True: 'ligado', False: 'desligado'}[status]
+    return make_response(jsonify({'status': status_led_pin})), 200 #retorna resposta em formato JSON
+
+@app.route('/led/status/', methods=['GET'])
+def led():
+    global status
+    status_led_pin={True: 'ligado', False: 'desligado'}[status]
+    return jsonify({'status': status_led_pin}), 200 #retorna resposta em formato JSON
+
+if __name__ == '__main__':
+    setup()
+    socketio.run(app, host='0.0.0.0', port='5000')
