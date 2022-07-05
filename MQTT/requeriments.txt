@@ -1,0 +1,4 @@
+gpiozero==1.5.1
+pigpio==1.44
+paho-mqtt==1.4.0
+psutil==5.9.1
