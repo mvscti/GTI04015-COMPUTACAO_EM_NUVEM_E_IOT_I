@@ -16,7 +16,7 @@ import requests
 
 
 # Variáveis Globais
-NOME_COISA = 'COISA'  # O nome da 'coisa'
+NOME_COISA = ''  # O nome da 'coisa'
 URL = 'https://dweet.io'            # Dweet.io service API
 
 
