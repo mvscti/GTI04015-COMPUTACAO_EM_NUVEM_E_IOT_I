@@ -4,6 +4,7 @@
 Neste diretório se encontram os códigos utilizados nas práticas sobre portas GPIO (<i>General Purpose Input-Output</i> Entrada e Saída de uso geral) da Raspberry PI. Todas as práticas são realizadas utilizando Raspberry PI modelo 4B e todos os scritps foram escritos em Python 3. A relação segue abaixo:
 *   [requeriments](requeriments.txt) - Dependências Python necessárias para executar os scripts
 *   [gpio_led_buzzer](gpio_led_buzzer.py) - Script que aciona um led/buzzer
+*   [buzzer](buzzer.py) -  Script que toca o tema clássico do jogo de videogame do Super Mario.
 *   [check_requisitos](check_requisitos.py) - Verifica se as bibliotecas necessárias a execução dos scripts se encontram instaladas
 
 ## Descrição dos scripts
