@@ -612,7 +612,7 @@ def play(melody,tempo,pause,pace=0.800):
 if __name__ == '__main__':		# Program start from here
 	try:
 		setup()
-		print "Super Mario Theme"
+		print("Super Mario Theme")
 		play(melody, tempo, 1.3, 0.800)
 		time.sleep(2)
 		destroy()
