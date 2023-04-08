@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exemplo de uso do Flask Web Socket</title>
+    <script src="static/js/socket.io.js"></script>
+    <script src="static/js/jquery.min.js" type="text/javascript"></script> 
+    
+    <script type="text/javascript">
+
+        var socket = io();  // Veja a documentação da API em https://socket.io    
+
+        socket.on('connect', function() {                                     
+            console.log("Conectado ao servidor");
+            $("#conectado").html("Sim");
+        });
+
+        socket.on('disconnect', function() {                                  
+            console.log("Desconectado do servidor");
+            $("#conectado").html("Não");
+        });
+
+        socket.on('led', function(dataFromServer) {                           
+            console.log(dataFromServer)
+            if (dataFromServer.level !== undefined) {
+                $("input[type=range].brightnessLevel").val(dataFromServer.level);
+                $("#nivelBrilho").html(dataFromServer.level);
+            }
+        });
+
+        $(document).ready(function() {                                        
+            // Event listener for Slider value changes.
+            $("input[type=range].brightnessLevel").on('input', function(){
+                level = $(this).val();
+                payload = {"level": level};
+                socket.emit('led', payload);
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Exemplo de uso do Flask Web Socket</h1>
+    O LED está connectado a porta GPIO {{pin}}<br>
+    Conectado ao servidor: <span id="conectado">Não</span>                     
+    <br><br>
+    Brilho <span id="nivelBrilho"></span>:<br>
+    <input type="range" min="0" max="100" value="0" class="brightnessLevel">
+</body>
+</html>
