@@ -75,4 +75,4 @@ Perceba que ligaremos o LED na porta 21 da raspberry PI (não são todas as GPIO
 $ python3 server.py
 ```
 
-Nossa aplicação cliente é uma página web que conecta ao servidor WebSocket, bastando acessar o navegador e digiguat a URL: `<IP>:5000`, onde `<IP>` é o endereço IP da raspberry PI.
+Nossa aplicação cliente é uma página web que conecta ao servidor WebSocket, bastando acessar o navegador e digitar a URL: `http://<IP>:5000`, onde `<IP>` é o endereço IP da raspberry PI.
