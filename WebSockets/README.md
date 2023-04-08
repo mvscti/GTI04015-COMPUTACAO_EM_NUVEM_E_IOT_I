@@ -14,6 +14,7 @@ Em nosso caso, podemos utlizar esse protocolo para desenvolver soluções em IoT
 Neste diretório, se encontram os códigos utilizados nas práticas sobre o protocolo WebSocket. Todos os <em>scritps</em> foram escritos em Python 3. A relação segue abaixo:
 *   [server_simples](simples/server.py) 
 *   [client](simples/client.py) 
+*   [server](Exemplo PWM)(server.py)
 
 
 ## Descrição dos scripts
@@ -41,7 +42,7 @@ Você verá na "tela" de execução do script `server.py` o nome informado por v
 O cliente conecta, recebe uma mensagem do servidor e depois de cinco segundos  desconecta do servidor.
 
 
-### server
+### server - Créditos [Livro "Pratical Python Programing for IoT](https://github.com/PacktPublishing/Practical-Python-Programming-for-IoT)
 Este script demonstra como utilizar os conceitos de websocket para uma aplicação IoT que altera a intensidade de brilho de um LED de forma remota, através de uma página HTML (localizada no diretório `templates`).
 
 <strong>Antes de executar este código, você deve se conectar à raspberry PI e executar o `pigpiod`, digitando:</strong>
@@ -53,7 +54,7 @@ Antes de executar o script, é necessário entender alguns conceitos sobre modul
 #### Modulação por Largura de Pulso (PWM)
 Esta técnica de modulação gera uma onda quadrada, baseada na variação da largura de pulso de acordo com um valor chamado de <i>duty cycle</i>, definido pela seguinte fórmula:
 
-$D=\frac{t_{on}}T{s}$, onde
+$D=\frac{t_{on}}T_{s}$, onde:
 - $D$ é o <i>duty cycle</i>
 - $t_{on}$ é o tempo desligado do pulso
 - $T_{s}$ é o tempo ligado do pulso
