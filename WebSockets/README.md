@@ -14,7 +14,7 @@ Em nosso caso, podemos utlizar esse protocolo para desenvolver soluções em IoT
 Neste diretório, se encontram os códigos utilizados nas práticas sobre o protocolo WebSocket. Todos os <em>scritps</em> foram escritos em Python 3. A relação segue abaixo:
 *   [server_simples](simples/server.py) 
 *   [client](simples/client.py) 
-*   [server](Exemplo PWM)(server.py)
+*   [server (Exemplo com PWM)](server.py)
 
 
 ## Descrição dos scripts
@@ -42,7 +42,7 @@ Você verá na "tela" de execução do script `server.py` que o nome informado p
 O cliente conecta, recebe uma mensagem do servidor e depois de cinco segundos, desconecta do servidor.
 
 
-### server - Créditos [Livro "Pratical Python Programing for IoT](https://github.com/PacktPublishing/Practical-Python-Programming-for-IoT)
+### server - Créditos: [Livro "Pratical Python Programing for IoT](https://github.com/PacktPublishing/Practical-Python-Programming-for-IoT)
 Este <em>script</em> demonstra como utilizar os conceitos de websocket para uma aplicação IoT que altera a intensidade de brilho de um LED de forma remota, através de uma página HTML (localizada no diretório `templates`), utilizando o <em>slider</em> para definir a intensidade do brilho.
 
 <strong>Antes de executar este código, você deve se conectar à raspberry PI e executar o <em>daemon</em> `pigpiod`, da seguinte forma:</strong>
