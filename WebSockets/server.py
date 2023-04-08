@@ -96,9 +96,4 @@ inicia_led()
 
 
 if __name__ == '__main__':
-    # If you have debug=True and receive the error "OSError: [Errno 8] Exec format error", then:
-    # remove the execuition bit on this file from a Terminal, ie:
-    # chmod -x flask_ws_server.py
-    #
-    # Flask GitHub Issue: https://github.com/pallets/flask/issues/3189
     socketio.run(app, host='0.0.0.0', debug=True, port=5000)
