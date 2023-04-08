@@ -53,7 +53,7 @@ Antes de executar o script, é necessário entender alguns conceitos sobre modul
 #### Modulação por Largura de Pulso (PWM)
 Esta técnica de modulação gera uma onda quadrada, baseada na variação da largura de pulso de acordo com um valor chamado de <i>duty cycle</i>, definido pela seguinte fórmula:
 
-$ D=\frac{t_{on}}T{s}$, onde
+$D=\frac{t_{on}}T{s}$, onde
 - $D$ é o <i>duty cycle</i>
 - $t_{on}$ é o tempo desligado do pulso
 - $T_{s}$ é o tempo ligado do pulso
@@ -65,7 +65,7 @@ No nosso caso, iremos utilizar a raspberry PI para alterar a intensidade de um L
 ![pwm](PWM.gif)
 
 #### Circuito
-Como você já conhece o ![esquema da GPIO da raspberry PI](https://raw.githubusercontent.com/mvscti/GTI04015-COMPUTACAO_EM_NUVEM_E_IOT_I/main/GPIO/gpio-pinout-diagram.png), para que este script funcione da forma como queremos, temos que montar nosso circuito conforme o esquema à seguir:
+Como você já conhece o [esquema da GPIO da raspberry PI](https://raw.githubusercontent.com/mvscti/GTI04015-COMPUTACAO_EM_NUVEM_E_IOT_I/main/GPIO/gpio-pinout-diagram.png), para que este script funcione da forma como queremos, temos que montar nosso circuito conforme o esquema à seguir:
 
 ![esquema](esquema.png)
 
