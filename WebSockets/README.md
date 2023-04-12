@@ -11,19 +11,39 @@ Em <i>Home Brokers</i> (onde cotações monetárias são atualizadas a todo inst
 Em nosso caso, podemos utlizar esse protocolo para desenvolver soluções em IoT que vão desde simples acionamentos de LED's até aplicações complexas.
 
 # Práticas com WebSocket
+
 Neste diretório, se encontram os códigos utilizados nas práticas sobre o protocolo WebSocket. Todos os <em>scritps</em> foram escritos em Python 3. A relação segue abaixo:
 *   [server_simples](simples/server.py) 
 *   [client](simples/client.py) 
 *   [server (Exemplo com PWM)](server.py)
 
 
+## Preparando o ambiente
+<strong>IMPORTANTE:</strong> Antes de rodar os scripts, é necessário resolver as dependências dos projetos. O primeiro passo é criar um [ambiente virtual](https://docs.python.org/pt-br/3/library/venv.html) para cada projeto que iremos executar. Fazendo isso, podemos usar diferentes versões de uma biblioteca para um ou mais projetos em especifico, sem ser necessário a instalação delas em nosso Sistema Operacional (as bibliotecas são instaladas no diretório do seu projeto e so ficam disponíveis para ele). Para criar ambiente virtuais em Python:
+
+```
+$ python3 -m venv /diretório/para/ambiente_virtual
+```
+
+Após criar o ambiente virtual, precisamos ativá-lo:
+
+
+```
+$ source /diretório/para/ambiente_virtual/bin/activate
+```
+E finalmente podemos instalar nossas dependências (o comando a seguir deve ser executado dentro do diretório de seu projeto):
+
+```
+$ pip3 install -r requeriments.txt 
+```
+
+Para desativar (sair) do ambiente virtual de um projeto (para ativar outros, talvez), basta digitar:
+```
+$ deactivate
+```
+
+
 ## Descrição dos scripts
-<strong>IMPORTANTE:</strong> Antes de rodar os scripts, é necessário resolver as dependências:
-
-```
-$ python3 install -r requeriments.txt 
-```
-
 Cada script visa explorar a utilização do protocolo WebSocket para facilitar a integração de aplicações Web com as 'coisas'. Utilizaremos o framework [Flask](https://flask.palletsprojects.com/), que permite com que possamos criar websockets de forma simples em Python. Também utilizaremos a biblioteca [Socket.io](https://socket.io/), que permite a comunicação bidirecional e em tempo real entre clientes e servidores da Web.
 
 ### client e servidor_simples (Diretório `simples`)
