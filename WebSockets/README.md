@@ -19,7 +19,7 @@ Neste diretório, se encontram os códigos utilizados nas práticas sobre o prot
 
 
 ## Preparando o ambiente
-<strong>IMPORTANTE:</strong> Antes de rodar os scripts, é necessário resolver as dependências dos projetos. O primeiro passo é criar um [ambiente virtual](https://docs.python.org/pt-br/3/library/venv.html) para cada projeto que iremos executar. Fazendo isso, podemos usar diferentes versões de uma biblioteca para um ou mais projetos em especifico, sem ser necessário a instalação delas em nosso Sistema Operacional (as bibliotecas são instaladas no diretório do seu projeto e so ficam disponíveis para ele). Para criar ambiente virtuais em Python:
+<strong>IMPORTANTE:</strong> Antes de rodar os scripts, é necessário resolver as dependências dos projetos. O primeiro passo é criar um [ambiente virtual](https://docs.python.org/pt-br/3/library/venv.html) para cada projeto que iremos executar. Fazendo isso, podemos usar diferentes versões de uma biblioteca para um projeto em especifico, sem existir a necessidade de instalar elas em nosso Sistema Operacional (as bibliotecas são instaladas no diretório do seu projeto e só ficam disponíveis para ele). Para criar um ambiente virtual em Python:
 
 ```
 $ python3 -m venv /diretório/para/ambiente_virtual
@@ -31,6 +31,7 @@ Após criar o ambiente virtual, precisamos ativá-lo:
 ```
 $ source /diretório/para/ambiente_virtual/bin/activate
 ```
+
 E finalmente podemos instalar nossas dependências (o comando a seguir deve ser executado dentro do diretório de seu projeto):
 
 ```
