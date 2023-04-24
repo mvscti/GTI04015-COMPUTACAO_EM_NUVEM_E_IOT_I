@@ -24,7 +24,7 @@ Em suma, os principais verbos HTTP utilizados nas API REST são (se quiser conhe
 |PATCH | Parcialmente atualiza um recurso em uma coleção |
 
 ## Representações
-Sabemos que uma API perimite com que sistemas sejam  interoperáveis. É importante com que o intercâmbio de mensagens seja padronizado e se possível, facilmente compreendido por máquinas e humanos. Vamos analisar três exemplos muito utilizados nas API's:
+Sabemos que uma API perimite com que sistemas sejam  interoperáveis. É importante que o intercâmbio de mensagens seja padronizado e se possível, facilmente compreendido por máquinas e humanos. Vamos analisar três exemplos muito utilizados nas API's:
 
 * Mensagem em XML:
 ```xml
@@ -56,7 +56,7 @@ endereco:
 ```
 
 ## HTTP e IoT
-Em diversas situações, HTTP não é o protocolo ideal para aplicações IoT. A latência não pode ser previsível. É um protocolo baseado em texto, o que pode tonar o tamanho das mensagens muito grande (isso pode exigir grande consumo de energia por parte dos dispositivos). No entanto, o protocolo já é maduro o suficiente para ser utilizado em vasto uso. O protocolo também atua sob TCP (entrega confiável).
+Em diversas situações, HTTP não é o protocolo ideal para aplicações IoT. A latência não pode ser previsível. É um protocolo baseado em texto, o que pode tornar o tamanho das mensagens muito grande (isso pode exigir grande consumo de energia por parte dos dispositivos). No entanto, o protocolo já é maduro o suficiente para ter vasto uso. O protocolo também atua sob TCP (entrega confiável).
 
 Algumas vantagens no emprego do HTTP para IoT:
 * Confiável: Entrega da mensagem é garantida
