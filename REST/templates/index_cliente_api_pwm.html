@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flask Restful API Example</title>
+    <script src="static/js/socket.io.js"></script>
+    <script src="static/js/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    // requisição GET para o servidor oara recuperar o estado do LED
+    function getState() {
+        $.get("/led", function(serverResponse, status) {                       
+           console.log(serverResponse)
+           updateControls(serverResponse)                                      
+        });
+    }
+
+
+    //requisição POST Request para o servidor para 'setar' o estado do LED
+    function postUpdate(payload) {                                             
+        $.post("/led", payload, function(serverResponse, status) {
+            console.log(serverResponse)
+            updateControls(serverResponse);                                    
+        });
+    }
+
+
+    function updateControls(data) {
+        $("input[type=range].brightnessLevel").val(data.level);                
+        $("#brightnessLevel").html(data.level);
+    }
+
+
+    $(document).ready(function() {
+        // Event listener para alterações de valores do Slider
+        // .on('input', ...) irá acionar quando o slider altera os valores. Se quiser diminuir o delay (devido à rede), mude para
+        // .on('change', ...) para acionar após o clique do mouse
+        $("input[type=range].brightnessLevel").on('input', function() {        
+               brightness_level = $(this).val();                               
+               payload = { "level": brightness_level }                         
+               postUpdate(payload);
+            });
+
+        // Initialise slider value form state on server.
+        getState()                                                             
+    });
+
+    </script>
+</head>
+<body>
+    <h1>Exemplo de API Flask RESTful</h1>
+    LED está conectado a GPIO {{pin}}<br>                                      
+    Brilho: <span id="brightnessLevel"></span>%<br>
+    <input type="range" min="0" max="100" value="0" class="brightnessLevel">  
+</body>
+</html>

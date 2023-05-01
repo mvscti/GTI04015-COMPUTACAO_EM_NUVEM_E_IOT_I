@@ -68,6 +68,58 @@ Algumas desvantagens no emprego do HTTP para IoT:
 * Complexidade dos dispositivos IoT: dispositivos IoT são muito heterogêneos, o que significa que nem todos podem possuir memória e CPU suficientes para suportar o HTTP e uma API REST
 
 
+# Práticas com REST
+Neste diretório, se encontram os códigos utilizados nas práticas sobre o uso de REST API. Todos os scritps foram escritos em Python 3. A relação segue abaixo:
+* [Criando uma API REST com Flask](rest.py)
+* [Ligando/Desligando um LED com API REST](led_rest.py)
+* [Alterando a intensidade de brilho de um LED utilizando API REST com PWM](server_pwm.py)
+
+## Preparando o ambiente
+<strong>IMPORTANTE:</strong> Antes de rodar os scripts, é necessário resolver as dependências dos projetos. O primeiro passo é criar um [ambiente virtual](https://docs.python.org/pt-br/3/library/venv.html) <strong>para cada projeto que iremos executar</strong>. Fazendo isso, podemos usar diferentes versões de uma biblioteca para um projeto em especifico, sem existir a necessidade de instalar elas em nosso Sistema Operacional (as bibliotecas são instaladas no diretório do seu projeto e só ficam disponíveis para ele). Para criar um ambiente virtual em Python:
+
+```
+$ python3 -m venv /diretório/para/ambiente_virtual
+```
+
+Após criar o ambiente virtual, precisamos ativá-lo:
 
 
+```
+$ source /diretório/para/ambiente_virtual/bin/activate
+```
+
+E finalmente podemos instalar nossas dependências (o comando a seguir deve ser executado dentro do diretório de seu projeto):
+
+```
+$ pip3 install -r requeriments.txt 
+```
+
+Para desativar (sair) do ambiente virtual de um projeto (para ativar outros, talvez), basta digitar:
+```
+$ deactivate
+```
+## Descrição dos scripts
+Cada script visa explorar a utilização do protocolo WebSocket para facilitar a integração de aplicações Web com as 'coisas'. Utilizaremos o framework [Flask](https://flask.palletsprojects.com/), que permite com que possamos criar websockets de forma simples em Python. Também utilizaremos a biblioteca [Socket.io](https://socket.io/), que permite a comunicação bidirecional e em tempo real entre clientes e servidores da Web.
+
+### [Criando uma API REST com Flask](rest.py)
+<em>Script</em> que permite criar uma API com Flask, definindo os <em>endpoints</em> (ainda não aplicado ao uso de IoT). É necessário "estartar" o servidor com o seguinte comando:
+```
+$ python3 rest.py 
+```
+Você irá perceber que o servidor aguardará requisições na porta 5000 TCP (pode ser configurado/alterado). Feito isso, você pode utilizar algum software cliente para testar os <em>endpoints</em> da sua API (recomendo o plugin RESTED, disponível para Firefox e Google Chrome ou o [cURL](https://pt.wikipedia.org/wiki/CURL)). Analise o código para saber quais são os <em>endpoints</em> e crie/altere os <em>endpoints</em> já disponíveis. 
+
+### [Ligando/Desligando um LED com API REST](led_rest.py)
+Aqui, é possível ligar e desligar um LED utilizando a API que o código implementa. O protótipo para este exemplo pode ser visto na figura abaixo:
+
+![esquema](esquema.png)
+
+ É necessário "estartar" o servidor com o seguinte comando:
+```
+$ python3 rest.py 
+```
+Você irá perceber que o servidor aguardará requisições na porta 5000 TCP (pode ser configurado/alterado). Feito isso, você pode utilizar algum o navegador de sua preferência para ligar/desligar o LED ligado à GPIO, acessando ```http://<IP_DO_SERVIDOR>:5000```.
+
+### [Alterando a intensidade de brilho de um LED utilizando API REST com PWM](server_pwm.py) - Créditos: Livro [Practical Python Programming for IoT](https://github.com/PacktPublishing/Practical-Python-Programming-for-IoT)
+
+Você já aprendeu sobre [Modulação por Largura de Pulso (PWM)](https://github.com/mvscti/GTI04015-COMPUTACAO_EM_NUVEM_E_IOT_I/tree/main/WebSockets#modula%C3%A7%C3%A3o-por-largura-de-pulso-pwm). A ideia deste <em>script</em> é aplicar o mesmo conceito, mas desta vez, utilizando HTTP REST. Lembre-se que o circuito para este exemplo deve ser configurado [desta forma](https://raw.githubusercontent.com/mvscti/GTI04015-COMPUTACAO_EM_NUVEM_E_IOT_I/main/WebSockets/esquema.png).
 
