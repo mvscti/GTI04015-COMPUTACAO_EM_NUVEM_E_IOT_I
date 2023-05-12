@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, make_response
+from flask import Flask, jsonify, make_response, render_template, request
 from flask_cors import CORS
 from flask_socketio import SocketIO
 import RPi.GPIO as GPIO
@@ -16,6 +16,11 @@ def setup():
     
     if (status==True):
         GPIO.output(LED_PIN, GPIO.HIGH)
+
+@app.route('/', methods=['GET'])                                                     
+def index():
+    """Garanta que o arquivo index_cliente_api.html esteja no diretório "templates" """
+    return render_template('index_cliente_api.html')      
 
 @app.route('/altera/', methods=['PUT'])
 def altera_led():

@@ -49,7 +49,7 @@ Funções para Flask e Flask-Restful
 
 @app.route('/', methods=['GET'])                                                     
 def index():
-    """Garanta que o arquivo index_cliente_api.html esteja no diretório "templates" """
+    """Garanta que o arquivo index_cliente_api_pwm.html esteja no diretório "templates" """
     return render_template('index_cliente_api_pwm.html', pin=LED_GPIO_PIN)                
 
 
