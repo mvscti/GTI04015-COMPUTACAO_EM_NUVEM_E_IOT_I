@@ -3,10 +3,15 @@ Repositório utilizado para as práticas da disciplina de Computação em Nuvem 
 
 ### Como o repositório está organizado
 Aqui, todos os códigos das práticas envolvendo os conceitos de IoT e Nuvem podem ser encontrados. O repositório está disposto da seguinte forma:
+
 . [GPIO](/GPIO/): Conceitos iniciais de manipulação da Entrada e Saída de Uso geral da Raspberry Pi
+
 . [WebSockets](/WebSockets/): Protocolo WebSocket e seu uso para aplicações IoT
+
 . [REST](/REST/): Uso de REST API aplicada a IoT
+
 . [MQTT](/MQTT/): Protocolo MQTT e suas aplicações para IoT
+
 . [CLOUD](/CLOUD/): Conectando nossas "Coisas" à Nuvem
 ### Instalando as dependências
 Todos os códigos deste repositório foram escritos utilizando Python 3 e utilizam uma raspberry Pi (os testes foram realizados na versão 4, mas outras versões da Placa também podem ter compatilidade). Após baixar ou clonar este repositório (recomenda-se fazer isso numa raspberry PI), você deve criar o ambiente virtual com:
