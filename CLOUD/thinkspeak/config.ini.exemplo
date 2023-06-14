@@ -1,0 +1,8 @@
+#É necessário renomear este arquivo para config.ini 
+[GENERAL]
+
+broker = mqtt3.thingspeak.com
+porta= 80
+id_canal=
+id_cliente=
+senha=
