@@ -1,5 +1,5 @@
 '''
-Conecta ao serviço Matlab ThinhSpeak para enviar dados do uso da CPU.
+Conecta ao serviço Matlab ThingSpeak para enviar dados do uso da CPU.
 Para mais informações, ler: https://nothans.com/thingspeak-tutorials/update-a-thingspeak-channel-using-mqtt-on-a-raspberry-pi
 '''
 
