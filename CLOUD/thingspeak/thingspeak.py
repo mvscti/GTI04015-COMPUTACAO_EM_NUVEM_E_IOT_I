@@ -5,20 +5,27 @@ Para mais informações, ler: https://nothans.com/thingspeak-tutorials/update-a-
 
 from paho.mqtt import client as mqtt_client
 from time import sleep
-import sys, logging, signal, psutil
+import sys, logging, signal, psutil, configparser
+
 
 # Inicializa Logging
 logging.basicConfig(level=logging.WARNING)  # configuração global de logging
 logger = logging.getLogger("main")  
 logger.setLevel(logging.INFO) 
 
-broker = 'mqtt3.thingspeak.com'
-porta = 80 #Estaremos conectando ao broker MQTT através de websocket
-topico=f'channels/1039847/publish'
-username="JykpHgA7NQ8XMi0MKBo1EQU"
-password="7iiYHuXjyE/lFbsNq+5mfGQZ"
-id_cliente = 'JykpHgA7NQ8XMi0MKBo1EQU'
-cliente = mqtt_client.Client(id_cliente, transport='websockets') #método de trasporte: websockets
+
+config = configparser.ConfigParser()
+#Lê arquivo com as configurações
+config.read('config.ini')
+
+
+broker = config['broker']
+porta = config['porta'] #Estaremos conectando ao broker MQTT através do protocolo websocket
+topico=f"channels/{config['id_canal']}/publish"
+username=config['id_cliente']
+password=config['senha']
+id_cliente = config['id_cliente']
+cliente = mqtt_client.Client(id_cliente, transport='websockets') #método de transporte: websocket
 
 def publish():
     global cliente, topico
