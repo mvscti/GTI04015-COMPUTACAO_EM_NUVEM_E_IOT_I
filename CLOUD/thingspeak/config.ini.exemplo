@@ -1,6 +1,7 @@
 #É necessário renomear este arquivo para config.ini 
 [GENERAL]
 
+[THINGSPEAK]
 broker = mqtt3.thingspeak.com
 porta= 80
 id_canal=

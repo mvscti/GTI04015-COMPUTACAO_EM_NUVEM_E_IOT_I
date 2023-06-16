@@ -1,5 +1,5 @@
 '''
-Conecta ao serviço Matlab ThingSpeak para enviar dados do uso da CPU.
+Conecta ao serviço Matlab ThinkSpeak para enviar dados do uso da CPU.
 Para mais informações, ler: https://nothans.com/thingspeak-tutorials/update-a-thingspeak-channel-using-mqtt-on-a-raspberry-pi
 '''
 
@@ -19,12 +19,12 @@ config = configparser.ConfigParser()
 config.read('config.ini')
 
 
-broker = config['broker']
-porta = config['porta'] #Estaremos conectando ao broker MQTT através do protocolo websocket
-topico=f"channels/{config['id_canal']}/publish"
-username=config['id_cliente']
-password=config['senha']
-id_cliente = config['id_cliente']
+broker = config['THINGSPEAK']['broker']
+porta = int(config['THINGSPEAK']['porta']) #Estaremos conectando ao broker MQTT através do protocolo websocket
+topico=f"channels/{config['THINGSPEAK']['id_canal']}/publish"
+username=config['THINGSPEAK']['id_cliente']
+password=config['THINGSPEAK']['senha']
+id_cliente = config['THINGSPEAK']['id_cliente']
 cliente = mqtt_client.Client(id_cliente, transport='websockets') #método de transporte: websocket
 
 def publish():
