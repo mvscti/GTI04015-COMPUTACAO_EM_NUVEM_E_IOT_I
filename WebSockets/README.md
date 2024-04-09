@@ -77,8 +77,8 @@ Esta técnica de modulação gera uma onda quadrada, baseada na variação da la
 
 $D=\frac{t_{on}}T_{s}$, onde:
 - $D$ é o <i>duty cycle</i>
-- $t_{on}$ é o tempo desligado do pulso
-- $T_{s}$ é o tempo ligado do pulso
+- $t_{on}$ é o tempo "ligado" do pulso
+- $T_{s}$ é o período do sinal modulado (também chamado de sinal PWM)
 Resumidamente, o <i>duty cycle</i> é a razão entre o tempo ligado de um sinal PWM e o seu período.
 
 PWM pode ser usado para codificar a informação para transmissão, permitir o controle da energia fornecida aos dispositivos elétricos (especialmente motores), reguladores de tensão, etc. Você pode saber mais a respeito de PWM [aqui](https://eltgeral.com.br/o-que-e-pwm/).
