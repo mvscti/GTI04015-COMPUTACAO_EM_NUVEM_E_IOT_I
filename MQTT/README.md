@@ -1,30 +1,31 @@
 [Retornar a Tabela de Conteúdos](./)
 # MQTT
-O MQTT (<i>Message Queuing Telemetry Transport</i>) é um protocolo de transporte de mensagens que segue o modelo Cliente/Servidor e que possibilita a comunicação entre máquinas (<i>Machine to Machine</i> – M2M), sendo amplamente utilizado para conectividade de IoT. É aberto, leve e de fácil implementação, sendo executado em TCP/IP ou em outros protocolos de rede.
+O MQTT (<i>Message Queuing Telemetry Transport</i>) é um protocolo de transporte de mensagens que segue o modelo Cliente/Servidor e que possibilita a comunicação entre máquinas (<i>Machine to Machine</i> – M2M), sendo amplamente utilizado para conectividade em IoT. É aberto, leve e de fácil implementação, sendo executado em TCP/IP ou em outros protocolos.
 
-Em sistemas MQTT, o paradigma ou conceito ```Publish/Subscribe``` é utilizado. Neste paradigma, o cliente pode fazer “postagens/publicações” ou captar informações, enquanto o Servidor administra o envio e o recebimento desses dados. O objeto da existência deste protocolo é minimizar a largura de banda da rede e os requisitos de recursos de dispositivos restritos, proporcionando confiabilidade e maior garantia de entrega.
+Em sistemas MQTT, o paradigma (ou conceito) ```Publish/Subscribe``` é empregado. Nele, o cliente pode fazer “postagens/publicações” ou captar informações, enquanto o Servidor administra o envio e o recebimento desses dados. O objetivo da existência deste protocolo é minimizar a largura de banda da rede e os requisitos sobre recursos de dispositivos restritos, proporcionando confiabilidade e maior garantia de entrega.
 
 
 
 ## Ecossistema MQTT
-Todo o ecossistema do MQTT dependende, fundamentalmente, dos seguintes elementos:
+Todo o ecossistema do MQTT depende, fundamentalmente, dos seguintes elementos:
 
 ##### Publish/subscribe (Publicação/Assinatura)
 
-Quando um dispositivo é do tipo ```publish```, significa que este faz publicações de dados ou comandos pré-definidos. Já os dispositivos ```subscribe``` assinam um tópico e recebem as informações publicadas pelo Publish.
+Quando um dispositivo é do tipo ```publish```, significa que este faz publicações de dados ou comandos pré-definidos. Já os dispositivos ```subscribe``` **assinam** um tópico e recebem as informações publicadas pelo publicador.
 
-Esse padrão de mensagem separa o cliente que publica do cliente que recebe, o que significa que eles não mantêm contato direto e nem ao menos precisam saber que o outro existe, já que sua conexão é feita por um Broker.
+Esse padrão de comunicação separa o cliente que publica do cliente que recebe. Isso significa que eles não mantêm contato direto e nem ao menos precisam saber que da existência do outro, já que as mensagens são enviadas por um Broker.
+
 ##### Broker
 
-Desempenha um papel fundamental no processo de publicação/assinatura: o de servidor intermediário.
+Desempenha um papel fundamental no processo de publicação/assinatura: o de "servidor intermediário".
 
-Tem o papel de filtrar todas as mensagens, recebendo-as, enfileirando-as e distribuindo-as para cada assinante, que irá receber somente as mensagens de seu interesse.
+Tem o papel de filtrar todas as mensagens, recebendo-as, enfileirando-as e distribuindo-as para cada assinante, que irá receber somente as mensagens de seu interesse (ou seja, aquelas que foram assinadas por ele).
 
-Essa filtragem pode ser realizada de diferentes formas, baseada no assunto ou tópico, conteúdo, tipo ou classe.
+Essa filtragem pode ser realizada de diferentes formas, como aquelas baseada em um assunto ou tópico, conteúdo, tipo ou classe.
 
 Um sistema pode conter mais de um Broker, que fazem compartilhamento dos dados entre si, para direcionar as mensagens aos clientes.
 
-Existem alguns <i>brokers</i> públicos na Internet. Um dos mais conhecidos de todos é o [mosquitto](https://mosquitto.org/).
+Existem alguns *brokers* públicos na Internet. Um dos mais conhecidos de todos é o [mosquitto](https://mosquitto.org/).
 
 ##### Cliente
 Pode ser um sensor em campo, um aplicativo em um data center ou qualquer coisa que seja capaz de interagir com o Broker e receber informações.
