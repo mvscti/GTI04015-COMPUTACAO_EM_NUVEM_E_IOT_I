@@ -2,7 +2,7 @@
 # REST
 Presente desde o início dos anos 90, o protocolo HTTP é atualmente o principal protocolo utilizado para comunicação entre sistemas Web.
 
-Nos anos 2000, Roy Fielding, um dos principais autores deste protocolo, sugeriu o uso de novos métodos. Estes métodos pretendiam resolver problemas relacionados a semântica durante as requisições. As sugestões permitiram o uso do HTTP de uma forma muito aproximada da utilização atual, dando sentido às requisições. Para melhor percepção, segue os exemplos da proposta de Fielding:
+Nos anos 2000, Roy Fielding, um dos principais autores deste protocolo, sugeriu o uso de novos métodos. Estes métodos pretendiam resolver problemas relacionados à semântica durante as requisições. As sugestões permitiram o uso do HTTP de uma forma muito aproximada da utilização atual, dando sentido às requisições. Para melhor percepção, segue os exemplos da proposta de Fielding:
 1. ```GET``` http://www.meudominio.com/alunos
 2. ```DELETE``` http://www.meudominio.com/alunos/patrick
 3. ```POST``` http://www.meudominio.com/alunos –data {nome: Marcus}
