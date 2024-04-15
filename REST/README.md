@@ -24,7 +24,7 @@ Em suma, os principais verbos HTTP utilizados nas API REST são (se quiser conhe
 |PATCH | Parcialmente atualiza um recurso em uma coleção |
 
 ## Representações
-Sabemos que uma API perimite com que sistemas sejam  interoperáveis. É importante que o intercâmbio de mensagens seja padronizado e se possível, facilmente compreendido por máquinas e humanos. Vamos analisar três exemplos muito utilizados nas API's:
+Sabemos que uma API permite com que sistemas sejam  interoperáveis. É importante que o intercâmbio de mensagens seja padronizado e se possível, facilmente compreendido por máquinas e humanos. Vamos analisar três exemplos muito utilizados nas API's:
 
 * Mensagem em XML:
 ```xml
