@@ -7,9 +7,9 @@ Nos anos 2000, Roy Fielding, um dos principais autores deste protocolo, sugeriu 
 2. ```DELETE``` http://www.meudominio.com/alunos/patrick
 3. ```POST``` http://www.meudominio.com/alunos –data {nome: Marcus}
 
-No exemplo 1, utilizamos o método (ou verbo) ```GET``` para obter todos os <strong>recursos</strong> daquela página (no exemplo, a página ```http://www.meudominio.com/alunos```). Entenda recurso como algo que uma determinada página pode oferecer (conteúdo HTML, documento PDF, arquivos de formatação, etc). Já no segundo exemplo, o verbo ```DELETE``` é utilizado para para remover um recurso da mesma página. No exemplo, é solicitado a remoção de um aluno de nome <i>patrick</i>. Já o método ```POST```, do terceiro exemplo, demonstra a criação de um novo aluno na base de dados do servidor ```www.meudominio.com```.
+No exemplo 1, utilizamos o método (ou verbo) ```GET``` para obter todos os **recursos** daquela página (no exemplo, a página ```http://www.meudominio.com/alunos```). Entenda recurso como algo que uma determinada página pode oferecer (conteúdo HTML, documento PDF, arquivos de formatação, etc). Já no segundo exemplo, o verbo ```DELETE``` é utilizado para para remover um recurso da mesma página. No exemplo, é solicitado a remoção de um aluno de nome *patrick*. Já o método ```POST```, do terceiro exemplo, demonstra a criação de um novo aluno na base de dados do servidor ```www.meudominio.com```.
 
-Os princípios apresentados fazem parte da API (<i>Application Programing Interface</i> - Interface de Programação de Aplicação) REST (<i>Representational State Transfer</i> - Transferência de estado representacional). A REST (ou RESTFul) é uma arquitetura de software que impõe condições sobre como uma API deve funcionar. Ou seja, a API concede a <strong>interoperabilidade</strong> entre usuários e aplicações.
+Os princípios apresentados fazem parte da API (*Application Programing Interface* - Interface de Programação de Aplicação) REST (*Representational State Transfer* - Transferência de estado representacional). A REST (ou RESTFul) é uma arquitetura de software que impõe condições sobre como uma API deve funcionar. Ou seja, a API concede a **interoperabilidade** entre usuários e aplicações.
 
 ![api_rest_aplicação](https://raw.githubusercontent.com/mvscti/GTI04015-COMPUTACAO_EM_NUVEM_E_IOT_I/main/REST/1623804399333.png)
 
@@ -51,20 +51,20 @@ Sabemos que uma API perimite com que sistemas sejam  interoperáveis. É importa
 endereco:
   rua: 'Avenida Amazonas'
   numero: '126'
-  cidade: 'Belo Horizinte'
+  cidade: 'Belo Horizonte'
   cep: '156112-651'
 ```
 
 ## HTTP e IoT
-Em diversas situações, HTTP não é o protocolo ideal para aplicações IoT. A latência não pode ser previsível. É um protocolo baseado em texto, o que pode tornar o tamanho das mensagens muito grande (isso pode exigir grande consumo de energia por parte dos dispositivos). No entanto, o protocolo já é maduro o suficiente para ter vasto uso. O protocolo também atua sob TCP (entrega confiável).
+Em diversas situações, HTTP não é o protocolo ideal para aplicações IoT. A latência não é previsível. Além do mais, é um protocolo baseado em texto, o que pode tornar o tamanho das mensagens muito grande (isso pode exigir grande consumo de energia por parte dos dispositivos). No entanto, o protocolo já é maduro o suficiente para ter vasto uso. O protocolo também atua sob TCP (entrega confiável).
 
 Algumas vantagens no emprego do HTTP para IoT:
 * Confiável: Entrega da mensagem é garantida
 * Onipresença: HTTP é usado em diversos cenários e é facilmente implementado
-* Fácil de ser implementado: Se você se conceta à Internet, pode-se usar o HTTP em qualquer lugar do mundo (não há necessidade de software ou hardware adcional).
+* Fácil de ser implementado: Se você se conecta à Internet, é possível usaro HTTP em qualquer lugar do mundo (não há necessidade de software ou hardware adcional).
 
 Algumas desvantagens no emprego do HTTP para IoT:
-* Consumo alto de carga: o processo de "ir e voltar" na comunicação é comum para manter as conexões, o que faz o consumo energético ser maior. O tamanho das mensagens também é um dificultador.
+* Consumo alto de carga: o processo de "ir e voltar" na comunicação é comum para manter as conexões, o que faz o consumo de energia ser maior. O tamanho das mensagens também é um dificultador.
 * Complexidade dos dispositivos IoT: dispositivos IoT são muito heterogêneos, o que significa que nem todos podem possuir memória e CPU suficientes para suportar o HTTP e uma API REST
 
 
@@ -75,7 +75,7 @@ Neste diretório, se encontram os códigos utilizados nas práticas sobre o uso 
 * [Alterando a intensidade de brilho de um LED utilizando API REST com PWM](server_pwm.py)
 
 ## Preparando o ambiente
-<strong>IMPORTANTE:</strong> Antes de rodar os scripts, é necessário resolver as dependências dos projetos. O primeiro passo é criar um [ambiente virtual](https://docs.python.org/pt-br/3/library/venv.html) <strong>para cada projeto que iremos executar</strong>. Fazendo isso, podemos usar diferentes versões de uma biblioteca para um projeto em especifico, sem existir a necessidade de instalar elas em nosso Sistema Operacional (as bibliotecas são instaladas no diretório do seu projeto e só ficam disponíveis para ele). Para criar um ambiente virtual em Python:
+**IMPORTANTE:** Antes de rodar os scripts, é necessário resolver as dependências dos projetos. O primeiro passo é criar um [ambiente virtual](https://docs.python.org/pt-br/3/library/venv.html) <strong>para cada projeto que iremos executar</strong>. Fazendo isso, podemos usar diferentes versões de uma biblioteca para um projeto em especifico, sem existir a necessidade de instalar elas em nosso Sistema Operacional (as bibliotecas são instaladas no diretório do seu projeto e só ficam disponíveis para ele). Para criar um ambiente virtual em Python:
 
 ```
 $ python3 -m venv /diretório/para/ambiente_virtual
