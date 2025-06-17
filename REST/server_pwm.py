@@ -9,7 +9,6 @@ from flask import Flask, request, render_template
 from flask_restful import Resource, Api, reqparse, inputs                           
 from gpiozero import PWMLED, Device                                                  
 from gpiozero.pins.pigpio import PiGPIOFactory
-from flask_socketio import SocketIO
 
 # Inicializa Logging
 logging.basicConfig(level=logging.WARNING)  # configuração Global de logging
@@ -23,7 +22,7 @@ Device.pin_factory = PiGPIOFactory() # "seta" GPIOZero para usar PiGPIO por padr
 # Variáveis de Instância do Flask e Flask-RESTful
 app = Flask(__name__) # Core Flask app.                                              
 api = Api(app)                               
-socketio = SocketIO(app)
+
 
 # variáveis globais
 LED_GPIO_PIN = 21
@@ -93,4 +92,4 @@ init_led()
 api.add_resource(LEDControl, '/led')                                                 
 
 if __name__ == '__main__':
-    socketio.run(app, host='0.0.0.0', debug=True, port='5000')
+    app.run(host='0.0.0.0', debug=True, port='5000')

@@ -1,10 +1,9 @@
 from flask import Flask, jsonify, make_response, render_template, request
 from flask_cors import CORS
-from flask_socketio import SocketIO
 import RPi.GPIO as GPIO
 app = Flask(__name__)
 app.config['DEBUG'] = True
-socketio = SocketIO(app)
+
 CORS(app)
 status = False
 LED_PIN = 17
@@ -41,4 +40,4 @@ def led():
 
 if __name__ == '__main__':
     setup()
-    socketio.run(app, host='0.0.0.0', port='5000')
+    app.run(host='0.0.0.0', port='5000')
