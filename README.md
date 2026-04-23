@@ -26,5 +26,10 @@ E finalmente instalar as dependências:
 
 ```pip3 install -r /caminho/para-o-diretório/GTI4015-COMPUTACAO_EM_NUVEM_E_IOT_I/requeriments.txt```
 
+Cliente GUI SFTP - SnowFlake. Obtido [aqui](https://github.com/subhra74/snowflake).
+
+Para executar: 
+```java -jar snowflake.jar```
+
 
 
